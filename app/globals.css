@@ -33,14 +33,6 @@
 .rolodex:hover{
   animation-play-state: running;
 }
-.rolodex>div{
-  transition-property: filter; 
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
-  transition-duration: 150ms;
-}
-.rolodex:hover>div:not(:hover){
-  filter: blur(2px);
-}
 
 .backdrop-blur-sm {
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
