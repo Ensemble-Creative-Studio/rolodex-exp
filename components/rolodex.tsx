@@ -55,7 +55,21 @@ export default function Rolodex({projects}: RolodexProps){
     setshowProject(false);
   }
 
-  const radius = window.innerWidth/8;
+  const [radius, setRadius] = useState(500);
+  useEffect(() => {
+    const updateRadius = () => {
+      if (typeof window !== 'undefined') {
+        setRadius(window.innerWidth / 8);
+      }
+    };
+    updateRadius();
+    window.addEventListener('resize', updateRadius);
+    return () => {
+      window.removeEventListener('resize', updateRadius);
+    };
+  }, []);
+
+
   const angleStep = 360 / projects.length;
   
     return (
