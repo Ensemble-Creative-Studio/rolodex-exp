@@ -14,7 +14,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className="p-2 bg-black text-white tabular-nums">
+      <body className="p-2 bg-black text-white tabular-nums overflow-hidden">
         <header className="fixed top-0 left-0 w-screen p-2">
           <h1 className="text-md lowercase w-full flex justify-between"><span>Beauty</span> <span>for</span> <span>everyone</span> <span>savee™</span></h1>
         </header>

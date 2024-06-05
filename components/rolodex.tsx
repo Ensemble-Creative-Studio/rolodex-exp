@@ -22,9 +22,27 @@ export default function Rolodex({projects}: RolodexProps){
       setVirtualScroll((prev) => prev + event.deltaY);
     };
 
+    let startY = 0;
+
+    const handleTouchStart = (event: TouchEvent) => {
+      startY = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      const currentY = event.touches[0].clientY;
+      const deltaY = startY - currentY;
+      setVirtualScroll((prev) => prev + deltaY);
+      startY = currentY;
+    };
+
     window.addEventListener('wheel', handleWheel);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+
     return () => {
       window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 
@@ -63,7 +81,7 @@ export default function Rolodex({projects}: RolodexProps){
             return(
               <div
                 key={project._id}
-                className="w-full h-full absolute top-0 left-0 cursor-pointer"
+                className="w-full h-full absolute top-0 left-0 cursor-pointer rounded-s-md overflow-hidden"
                 style={{
                   transform: `
                     rotateY(${angle}deg)

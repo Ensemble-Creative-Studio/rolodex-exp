@@ -1,8 +1,10 @@
+This project is inspired by a [Savee publication on Instagram](https://www.instagram.com/p/C7Ex4KwpIQ5/?img_index=1), and all images belongs to their respective owners.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, get the good npm version with `nvm use`.
+First, get the good npm version with `nvm use` or `nvm install`.
 Then, install the dependencies with `npm install`.
 Finally run the development server:
 
